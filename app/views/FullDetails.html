@@ -1,0 +1,30 @@
+<div class="full-details" ng-controller="fullDetailsController">
+    <div class="full-container">
+        <div>
+                <img ng-src="{{$ctrl.item.links[0].href}}" alt="">
+        </div>
+        <div style="padding:20px;">
+                <h2>{{$ctrl.item.data[0].title}}</h2>
+                <span>{{$ctrl.item.data[0].secondary_creator}}</span>
+                <p>
+                        {{$ctrl.item.data[0].description}}
+                </p>
+                <span>
+                    <b>Nasa ID: </b>
+                    {{$ctrl.item.data[0].nasa_id}}
+                </span>
+                <span ng-repeat="word in $ctrl.item.data[0].keywords">
+                    <b>Keywords : </b>
+                    {{ word }}
+                </span>
+                <span>
+                    <b>Secondary Operator: </b>
+                    {{$ctrl.item.data[0].secondary_creator}}
+                </span>
+                <span> <b>Date : </b>{{$ctrl.item.data[0].date_created | date: 'yyyy-MM-d'}}</span>
+                <button class="back-button" ng-click="closeIt()">
+                        Back
+                </button>
+        </div>
+    </div>
+</div>

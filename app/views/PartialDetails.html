@@ -1,0 +1,19 @@
+<div ng-controller= "partialDetailsController" class="partial-details">
+    <div class="image">
+        <img ng-src="{{$ctrl.item.links[0].href}}" alt="">
+    </div>
+    <div class="partial-content">
+        <h2>{{$ctrl.item.data[0].title}}</h2>
+        <span>{{$ctrl.item.data[0].secondary_creator}}</span>
+        <p>
+                {{$ctrl.item.data[0].description}}
+        </p>
+        <div class="partial-content-footer">
+            <span> <b>Date : </b>{{$ctrl.item.data[0].date_created | date: 'yyyy-MM-d'}}</span>
+            <button ng-click="full_preview = true">Full Preview</button>
+        </div>
+    </div>
+    <full-details item="$ctrl.item" ng-show="full_preview">
+
+    </full-details>
+</div>

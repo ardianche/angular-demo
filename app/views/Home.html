@@ -1,0 +1,15 @@
+<div ng-controller="homeCtrl as $ctrl" class="home-container">
+    <div class="home-list">
+        <div class="list-search">
+            <input type="text" placeholder="Search here" ng-model="search_value">
+            <button ng-click="searchItem()">Go</button>
+        </div>
+        <div class="list-result">
+            <render-images ng-repeat="image in retrieved_images.collection.items" ng-click="selectItem(image)" image="image"></render-images>
+            <span ng-show="retrieved_images.collection.items.length == 0">Sorry, no results for now ! Please try again.</span>
+        </div>
+    </div>
+    <div class="home-display">
+        <partial-details item="selected_item" ng-hide="selected_item == null"></partial-details>
+    </div>
+</div>
